@@ -1,10 +1,23 @@
-name: Pull Request Workflow
+name: 01 - Building Blocks
+on: 
+ - workflow_dispatch
+ - push
 
-on: [pull_request]
 
 jobs:
-  hello_world:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Print Hello World
-        run: echo "Hello, World!"
+  echo-hello:
+     runs-on: ubuntu-latest
+     steps:
+       - name: Say hello
+         run: echo "Hello, World!"
+  
+  echo-goodbye:
+     runs-on: ubuntu-latest
+     steps:
+      - name: Failed Step
+        run: echo "I will fail"
+      - name: Say goodbye
+        run: echo "Goodbye !"
+        
+
+
